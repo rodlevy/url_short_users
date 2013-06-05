@@ -1,0 +1,4 @@
+6/5/2013
+
+Added home nav to layout.erb
+Added styling for nav in application.css

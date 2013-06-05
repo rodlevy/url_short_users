@@ -1,0 +1,41 @@
+<div class="container">
+  <h1>Let's Shorten Your Link</h1>
+  <div class="url_list">Here are all the Shortened Urls:
+    <br>
+    <%=@urls%>
+    <%if @urls %>
+      <%@urls.each do |url|%>
+        <br>
+        <li>
+         <form name='click_counter' action ='/<%=url.url_short%>' method='get'>
+            <input type='submit' name="short_url" value="<%=url.url_short%>">
+            </li>
+            <li>
+              <%=url.url%></a>
+            </li>
+            <li>
+              Click Count: <%=url.click_count%></a>
+            </li>
+            <br>
+          <%end%>
+        <%end%>
+      </form>
+
+
+  <div>
+    <div>
+      <form name='create' action='/urls' method='post'>
+        <input type='text' name='url' placeholder='Place Original Link Here'>
+        <input type='submit' value='Shorten Me!!'>
+      </form>
+    </div>
+
+  </div>
+
+  <div>
+    <%if current_user%>
+    <a href='/users/<%=current_user.id%>'> See My Sweet Urls!</a>
+    <%end%>
+  </div>
+</div>
+

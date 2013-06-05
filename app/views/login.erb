@@ -1,0 +1,26 @@
+<div class="container">
+  <h1>Welcome to Urls!</h1>
+ 
+  <p class="create_user">
+  <form name='create_user' action='/create_user' method='post'>
+     <h1>Create User:</h1>
+     <div>First Name: <input type='text' name='user[first_name]'></div>
+     <div>Last Name:  <input type='text' name='user[last_name]'></div>
+     <div>Email:    <input type='text' name='user[email]'></div>
+     <div>Password:  <input type='password' name='user[password]'></div>
+     <input type = 'submit' value='Create Me!'>
+     <br>
+  </form>
+  </p>
+
+  <p class='login'>
+    <form name='login' action='/login' method='post'>
+     <h1>Login:   </h1>
+     <div>Email:  <input type='text' name='user[email]'></div>
+     <div>Password:  <input type='password' name='user[password]'></div>
+     <input type = 'submit' value='Log Me In'>
+     <br>
+  </form>
+  </p>
+  
+</div>
