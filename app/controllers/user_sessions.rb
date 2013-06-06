@@ -19,13 +19,13 @@ post '/login' do
   end
 end
 
-get '/secret_page' do
-  if current_user
-    erb :secret_page
-  else 
-    redirect '/'
-  end
-end
+# get '/secret_page' do
+#   if current_user
+#     erb :secret_page
+#   else 
+#     redirect '/'
+#   end
+# end
 
 get '/logout' do
   session[:user_id] = nil
@@ -47,8 +47,14 @@ post '/urls' do
     @url = Url.create(:url       => @long_url)
   end
 
-  @urls = Url.all
-  erb :index
+  @error = @url.errors.messages[:url]
+
+  if @url.invalid?
+    erb :error
+  else
+    @urls = Url.all
+    erb :index
+  end
 end
 
 get '/:short_url' do

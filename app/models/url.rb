@@ -3,7 +3,7 @@ class Url < ActiveRecord::Base
   before_create :shorten
   validates   :url, :presence => :true
   validates   :url, :uniqueness   => :true
-  # validate   :check_valid_url
+  validate   :check_valid_url
   belongs_to  :user
   
 # on custom validate its singular
